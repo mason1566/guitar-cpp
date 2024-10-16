@@ -2,6 +2,7 @@
 #define GUITAR
 
 #include <vector>
+#include <string>
 
 #include "Note.h"
 #include "Tuning.h"
@@ -17,6 +18,10 @@ public:
     {
         delete[] _pressedDownFrets;
     };
+
+    std::string toString();
+
+    Note& getString(const uint8_t& stringNumber) const;
 
 private:
     Tuning _tuning;

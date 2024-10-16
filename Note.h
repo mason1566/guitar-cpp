@@ -2,6 +2,7 @@
 #define NOTE
 
 #include <iostream>
+#include <string>
 
 namespace CONSTANTS {
     namespace NOTES_SHARP {
@@ -35,6 +36,8 @@ public:
     /// @param ordinal The integer representation of a note falling in the range of A0 to G10.
     Note(const uint8_t& ordinal);
     ~Note() {};
+
+    std::string toString() const;
 
 private:
     MusicalNote _note {};

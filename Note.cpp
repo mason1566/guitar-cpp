@@ -28,3 +28,8 @@ Note::Note(const uint8_t& ordinal)
 
     _note = static_cast<MusicalNote>(ordinal % CONSTANTS::NOTE_COUNT);
 }
+
+std::string Note::toString() const
+{
+    return CONSTANTS::NOTES_SHARP::NOTE_NAMES[static_cast<int>(_note)];
+}

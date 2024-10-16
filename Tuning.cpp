@@ -15,3 +15,11 @@ Tuning::Tuning(const Note& S1, const Note& S2, const Note& S3, const Note& S4, c
 {
     _openNotes = new Note[_stringCount] { S1, S2, S3, S4, S5, S6 };
 }
+
+Note& Tuning::getNote(const uint8_t& stringNumber) const
+{
+    if (stringNumber >= _stringCount)
+        throw std::runtime_error("stringNumber out of bounds in Tuning::getNote");
+
+    return _openNotes[stringNumber];
+}

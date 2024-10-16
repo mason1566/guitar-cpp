@@ -15,6 +15,7 @@ public:
     ~Tuning() { delete[] _openNotes; };
 
     Note* getNotes() const { return _openNotes; };
+    Note& getNote(const uint8_t& stringNumber) const;
     int8_t getStringCount() const { return _stringCount; };
 
 private:
