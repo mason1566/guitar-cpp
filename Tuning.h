@@ -14,15 +14,12 @@ public:
     Tuning(const Note& S1, const Note& S2, const Note& S3, const Note& S4, const Note& S5, const Note& S6);
     ~Tuning() { delete[] _openNotes; };
 
+    Note* getNotes() const { return _openNotes; };
+    int8_t getStringCount() const { return _stringCount; };
+
 private:
     Note* _openNotes;
     const uint8_t _stringCount;
 };
-
-// This namespace contains some default tunings/guitar setups
-namespace TUNINGS {
-    // const Tuning EADGBE {}
-}
-
 
 #endif

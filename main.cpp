@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
-#include "Note.h"
+#include "Guitar.h"
 
 int main() {
 
-    // Guitar guitar {};
-    Note note = Note(MusicalNote::A, 3);
+    Guitar guitar {};
     return 0;
 }
