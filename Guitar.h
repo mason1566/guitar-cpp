@@ -23,6 +23,8 @@ public:
 
     Note& getString(const uint8_t& stringNumber) const;
 
+    uint8_t getStringCount() const;
+
 private:
     Tuning _tuning;
     uint8_t* _pressedDownFrets; // A vector of the same size as _openNotes that denotes whether a corresponding string is being fretted (and where)

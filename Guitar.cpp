@@ -18,6 +18,10 @@ Guitar::Guitar()
 //     return ;
 // }
 
+uint8_t Guitar::getStringCount() const
+{
+    return _tuning.getStringCount();
+}
 
 
 Note& Guitar::getString(const uint8_t& stringNumber) const
