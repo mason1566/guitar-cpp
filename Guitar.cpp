@@ -6,24 +6,24 @@ Guitar::Guitar()
     _pressedDownFrets = new uint8_t[_tuning.getStringCount()] { 0 };
 }
 
-// std::string Guitar::toString()
-// {
-//     std::string guitarString { "" };
+std::string Guitar::toString()
+{
+    std::string guitarString { "" };
 
-//     for (int i = 0; i < ) 
-//     {
+    for (int i = 0; i < getStringCount(); i++) {
+        guitarString += getString(i).toString();
+        guitarString += "\n";
+    }
 
-//     }
-
-//     return ;
-// }
+    return guitarString;
+}
 
 Note& Guitar::getString(const uint8_t& stringNumber) const
 {
     if (stringNumber > _tuning.getStringCount())
         throw std::runtime_error("String number too high in Guitar::getString");
     
-    return _tuning.getNote(stringNumber);
+    return _tuning.getNote(stringNumber); // TODO: pressed frets don't currently change note
 }
 
 uint8_t Guitar::getStringCount() const
@@ -39,4 +39,5 @@ void Guitar::pressFret(const uint8_t& stringNumber, const uint8_t& fretNumber)
         throw std::runtime_error("Fret number too high in Guitar::pressFret");
 
     _pressedDownFrets[stringNumber] = fretNumber;
-} 
+}
+
