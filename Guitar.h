@@ -25,6 +25,8 @@ public:
 
     uint8_t getStringCount() const;
 
+    void pressFret(const uint8_t& stringNumber, const uint8_t& fretNumber);
+
 private:
     Tuning _tuning;
     uint8_t* _pressedDownFrets; // A vector of the same size as _openNotes that denotes whether a corresponding string is being fretted (and where)
