@@ -1,28 +1,17 @@
 #include "Tuning.h"
 
-struct Tuning 
+Tuning::Tuning() 
+    : _stringCount (CONSTANTS::DEFAULT_STRING_COUNT)
 {
-public:
-    // using 
+    // Default E2 A2 D3 G3 B3 E4 Tuning
+    _openNotes = new Note[_stringCount] { 
+        Note(MusicalNote::E, 2), Note(MusicalNote::A, 2), Note(MusicalNote::D, 3),
+        Note(MusicalNote::G, 3), Note(MusicalNote::B, 3), Note(MusicalNote::E, 4)
+    };
+}
 
-    // This constructor constructs a default guitar setup (E2 A2 D3 G3 B3 E4)
-    Tuning()
-    {
-        _openNotes = new Note[CONSTANTS::DEFAULT_STRING_COUNT] {Note(10), Note(10), Note(10), Note(10), Note(10), Note(10)};
-    }
-
-    // Destructor
-    ~Tuning() 
-    {
-        delete[] _openNotes;
-    }
-
-private:
-    Note* _openNotes;
-    const uint8_t _stringCount {};
-};
-
-// This namespace contains some default tunings/guitar setups
-namespace TUNINGS {
-    // const Tuning EADGBE {}
+Tuning::Tuning(const Note& S1, const Note& S2, const Note& S3, const Note& S4, const Note& S5, const Note& S6) 
+    : _stringCount (CONSTANTS::DEFAULT_STRING_COUNT)
+{
+    _openNotes = new Note[_stringCount] { S1, S2, S3, S4, S5, S6 };
 }

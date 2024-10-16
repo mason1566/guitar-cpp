@@ -1,5 +1,11 @@
 #include "Note.h"
 
+Note::Note()
+{
+    _note = MusicalNote::A;
+    _octave = 4;
+}
+
 /// @brief Constructor definition for Note
 /// @param note A Note enum representing one of the 12 notes
 /// @param octave An unsigned integer representing the octave of our note.

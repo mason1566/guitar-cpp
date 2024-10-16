@@ -1,7 +1,8 @@
-default: main
+default: build-run
 
-main: main.cpp
-	g++ -o main main.cpp
+main: *.cpp *.h
+	g++ -o main *.cpp *.h
+
 
 build-run: main
 	@./main

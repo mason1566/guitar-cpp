@@ -22,6 +22,9 @@ enum class MusicalNote { A, As, B, C, Cs, D, Ds, E, F, Fs, G, Gs };
 struct Note 
 {
 public:
+    /// @brief Default constructor for Note. Note defaults to A4 
+    Note();
+
     /// @brief Constructor for Note
     /// @param note A Note enum representing one of the 12 notes
     /// @param octave An unsigned integer representing the octave of our note.
